@@ -38,14 +38,12 @@ async function handleFormSubmit(formId) {
     const name = form.querySelector('[name="form_name"]')?.value.trim() || "";
     const phone = form.querySelector('[name="form_mobile"]')?.value.trim() || "";
     const city = form.querySelector('[name="form_city"]')?.value.trim() || "";
-    const select = form.querySelector('[name="form_select"]')?.value.trim() || "";
 
     // Validation for missing fields
     let missingFields = [];
     if (!name) missingFields.push("Name");
     if (!phone) missingFields.push("Phone");
     if (!city) missingFields.push("City");
-    if (!select) missingFields.push("Select");
 
     if (missingFields.length > 0) {
       Swal.close(); // Close the waiting indicator
@@ -73,12 +71,11 @@ async function handleFormSubmit(formId) {
     }
 
     const payload = {
-      page_url: "https://brochure-2.woodsbarog.com",
-      project_name: "thewoodsbarog",
+      page_url: "",
+      project_name: "shobha",
       form_name: name,
       form_mobile: phone,
       form_city: city,
-      form_select: select,
       doc_url: document.URL,
       doc_ref: document.referrer,
     };
@@ -130,3 +127,6 @@ window.addEventListener("beforeunload", function (e) {
 // Initialize forms
 handleFormSubmit("ajax-header-contact"); // First form
 handleFormSubmit("ajax-header-contact-2"); // second form
+handleFormSubmit("ajax-header-contact-3"); // third form
+handleFormSubmit("ajax-header-contact-4"); // fourth form
+
